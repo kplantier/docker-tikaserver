@@ -12,8 +12,8 @@ RUN	yum install -y \
         && rpm --import https://build.opensuse.org/projects/home:Alexander_Pozdnyakov/public_key \
         && yum update -y \
         && yum install tesseract -y \ 
-        && yum install tesseract-langpack-deutesseract-ocr \
-	tesseract-ocr-eng tesseract-ocr-ita tesseract-ocr-fra tesseract-ocr-spa tesseract-ocr-deu -y \
+        && yum install tesseract-langpack-eng \ 
+	tesseract-langpack-ita tesseract-langpack-fra tesseract-langpack-spa tesseract-langpack-deu -y \
 	&& curl -sSL https://people.apache.org/keys/group/tika.asc -o /tmp/tika.asc \
 	&& gpg --import /tmp/tika.asc \
 	&& curl -sSL "$TIKA_SERVER_URL.asc" -o /tmp/tika-server-${TIKA_VERSION}.jar.asc \
