@@ -2,6 +2,8 @@ FROM centos/php-56-centos7:latest
 
 USER 0
 
+EXPOSE 9998
+
 ENV TIKA_VERSION 1.21
 ENV TIKA_SERVER_URL https://www.apache.org/dist/tika/tika-server-$TIKA_VERSION.jar
 
@@ -24,7 +26,8 @@ RUN	yum install -y \
 	&& curl -sSL "$NEAREST_TIKA_SERVER_URL" -o /tika-server-${TIKA_VERSION}.jar \
 	&& yum clean all -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 9998
+# Reset permissions of filesystem to default values
+RUN /usr/libexec/container-setup && rpm-file-permissions
 
 USER 1001
 
