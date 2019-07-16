@@ -1,5 +1,4 @@
-FROM ubuntu:latest
-MAINTAINER david@logicalspark.com
+FROM centos/php-56-centos7
 
 ENV TIKA_VERSION 1.21
 ENV TIKA_SERVER_URL https://www.apache.org/dist/tika/tika-server-$TIKA_VERSION.jar
