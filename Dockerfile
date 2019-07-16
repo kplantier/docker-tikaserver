@@ -9,7 +9,7 @@ RUN	yum install -y \
         java-1.8.0-openjdk \
 	gnupg curl gdal \ 
 	&& yum-config-manager --add-repo https://download.opensuse.org/repositories/home:/Alexander_Pozdnyakov/CentOS_7/ \
-        && sudo rpm --import https://build.opensuse.org/projects/home:Alexander_Pozdnyakov/public_key \
+        && rpm --import https://build.opensuse.org/projects/home:Alexander_Pozdnyakov/public_key \
         && yum update -y \
         && yum install tesseract -y \ 
         && yum install tesseract-langpack-deutesseract-ocr \
