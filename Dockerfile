@@ -1,4 +1,4 @@
-FROM centos/php-56-centos7
+FROM centos/php-56-centos7:latest
 
 USER 0
 
