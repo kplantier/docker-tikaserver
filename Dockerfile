@@ -25,6 +25,7 @@ RUN	yum install -y \
 	&& yum clean all -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 9998
-ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
 
 USER 1001
+
+#ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
