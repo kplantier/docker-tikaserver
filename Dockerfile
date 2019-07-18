@@ -31,4 +31,4 @@ RUN /usr/libexec/container-setup && rpm-file-permissions
 
 USER 1001
 
-#ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
+ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
