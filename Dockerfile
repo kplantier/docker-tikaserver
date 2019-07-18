@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhscl/php-56-rhel7:latest
+FROM openshift/php-56-centos7
 
 USER 0
 
