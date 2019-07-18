@@ -26,9 +26,9 @@ RUN	yum install -y \
 	&& curl -sSL "$NEAREST_TIKA_SERVER_URL" -o /tika-server-${TIKA_VERSION}.jar \
 	&& yum clean all -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN echo java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 >> /usr/libexec/s2i/run
+
 # Reset permissions of filesystem to default values
 RUN /usr/libexec/container-setup && rpm-file-permissions
 
 USER 1001
-
-ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
