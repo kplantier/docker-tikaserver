@@ -26,7 +26,7 @@ RUN	yum install -y \
 	&& curl -sSL "$NEAREST_TIKA_SERVER_URL" -o /tika-server-${TIKA_VERSION}.jar \
 	&& yum clean all -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD usr/share/container-scripts/php/pre-start/60-tika-server-start.sh /usr/share/container-scripts/php/pre-start/60-tika-server-start.sh
+#ADD usr/share/container-scripts/php/pre-start/60-tika-server-start.sh /usr/share/container-scripts/php/pre-start/60-tika-server-start.sh
 
 # Reset permissions of filesystem to default values
 RUN /usr/libexec/container-setup && rpm-file-permissions
