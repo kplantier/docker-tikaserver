@@ -1,4 +1,4 @@
-FROM kplantier/s2i-php-container:latest
+FROM kevinplantier/s2i-php-container:latest
 
 USER 0
 
@@ -26,7 +26,7 @@ RUN	yum install -y \
 	&& curl -sSL "$NEAREST_TIKA_SERVER_URL" -o /tika-server-${TIKA_VERSION}.jar \
 	&& yum clean all -y && rm -rf /var/lib/apt/lists/* 
 
-#ADD usr/share/container-scripts/php/pre-start/60-tika-server-start.sh /usr/share/container-scripts/php/pre-start/60-tika-server-start.sh
+ADD usr/share/container-scripts/php/pre-start/60-tika-server-start.sh /usr/share/container-scripts/php/pre-start/60-tika-server-start.sh
 
 # Reset permissions of filesystem to default values
 RUN rpm-file-permissions
